@@ -1,0 +1,44 @@
+.LandingPage{
+    height: 100vh;
+    width: 100%;
+}
+.LandingHeader{
+    padding-top: 20px;
+    padding-bottom: 10px;
+    width: 100%;
+    padding-left: 20px;
+}
+.LandingHeader p{
+    font-weight: bold;
+    color: #FFD700;
+    font-size: 25px;
+    margin: 0;
+    padding: 0;
+}
+.LandingPageDetails {
+    width: 80%;
+    padding-left: 20px;
+    margin-top: 8vh;
+}
+.LandingPageDetails p{
+    color: #fff;
+    font-weight: 600;
+    font-size: 40px;
+    margin: 0;
+    padding: 0;
+    text-transform: capitalize;
+}
+.LandingPageRowColumns{
+    display: flex;
+    flex-direction: row;
+    padding-top: 10vh;
+}
+.LandingPageRow1{
+    height: 200px;
+    width: 30%;
+}
+.LandingPageRow2{
+    height: 200px;
+    width: 40%;
+    /* border: 1px solid red; */
+}
