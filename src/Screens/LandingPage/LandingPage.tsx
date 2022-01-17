@@ -4,6 +4,8 @@ import PurpleBall from '../../Components/Balls/PurpleBall';
 import CreditCard from '../../Components/CreditCard/CreditCard';
 import './LandingPage.css';
 
+import {FiChevronRight} from 'react-icons/fi'
+
 const width = window.innerWidth;
 
 function LandingPage() {
@@ -28,7 +30,10 @@ function LandingPage() {
                 </div>
             </div>
             <div className='LandingPageBottom'>
-                <div className='LandingPageBottom_Button'></div>
+                <div className='LandingPageBottom_Button'>
+                    <p>Get started</p>
+                    <FiChevronRight size={30} color='#FFD700' style={{margin: 0}} />
+                </div>
             </div>
         </div>
     );

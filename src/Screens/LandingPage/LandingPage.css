@@ -54,7 +54,6 @@
 .LandingPageBottom{
     height: 100px;
     width: 100%;
-    border: 1px solid #fff;
     position: absolute;
     bottom: 0;
     display: flex;
@@ -64,5 +63,15 @@
 .LandingPageBottom_Button{
     height: 50px;
     width: 200px;
-    background-color: red;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding-right: 20px;
+}
+.LandingPageBottom_Button p{
+    color: #FFD700;
+    font-size: 26px;
+    margin: 0;
+    padding: 0;
 }
