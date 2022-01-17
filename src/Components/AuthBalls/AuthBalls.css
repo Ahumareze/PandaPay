@@ -1,0 +1,36 @@
+.Ball{
+    height: 170px;
+    width: 170px;
+    border-radius: 100px;
+}
+.AuthGoldBall{
+    background: linear-gradient(141.95deg, #FFD700 13.3%, #937C00 107.93%);
+    animation: AuthGoldBounce 16s ease-out 0s alternate infinite none running;
+    z-index: 0;
+}
+.AuthPurpleBall{
+    background: linear-gradient(182.56deg, #FF9696 2.14%, #96A7FF 114.41%);
+    animation: AuthPurpleBounce 16s ease-out 0s alternate infinite none running;
+}
+
+@keyframes AuthGoldBounce{
+    0%{
+        transform: translateX(-90vh);
+        transform: translateY(-90vh);
+    }
+    100%{
+        transform: translateX(0px);
+        transform: translateY(0px);
+    }
+}
+
+@keyframes AuthPurpleBounce{
+    0%{
+        transform: translateX(90vh);
+        transform: translateY(90vh);
+    }
+    100%{
+        transform: translateX(0px);
+        transform: translateY(0px);
+    }
+}
