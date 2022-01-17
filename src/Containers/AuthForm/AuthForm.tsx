@@ -1,5 +1,4 @@
 import React from 'react';
-import './AuthForm.css';
 
 const width = window.innerWidth
 

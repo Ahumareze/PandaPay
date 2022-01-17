@@ -41,3 +41,9 @@
     position: absolute;
     top: 100px;
 }
+.AuthForm{
+    height: 500px;
+    background-color: #0F0F0F;
+    border-radius: 20px;
+    margin-top: 50px;
+}
