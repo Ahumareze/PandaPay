@@ -6,6 +6,7 @@
 .GoldBall{
     background: linear-gradient(141.95deg, #FFD700 13.3%, #937C00 107.93%);
     animation: goldBounce 4s ease-out 0s alternate infinite none running;
+    z-index: 0;
 }
 .PurpleBall{
     background: linear-gradient(182.56deg, #FF9696 2.14%, #96A7FF 114.41%);
@@ -25,8 +26,8 @@
 
 @keyframes purpleBounce{
     0%{
-        transform: translateX(-10vh);
-        transform: translateY(-10vh);
+        transform: translateX(10vh);
+        transform: translateY(10vh);
     }
     100%{
         transform: translateX(0px);

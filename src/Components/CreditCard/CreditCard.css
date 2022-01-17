@@ -1,0 +1,66 @@
+.CreditCard{
+    height: 200px;
+    width: 300px;
+    border-radius: 20px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 120%);
+    backdrop-filter: blur(20px);
+    z-index: 100;
+    animation: cardTilt 6s ease-out 0s alternate infinite none running;
+}
+
+@keyframes cardTilt{
+    0%{
+        transform: rotate(14.86deg);
+    }
+    100%{
+        transform: rotate(-14.86deg);
+    }
+}
+
+.CreditCard_Top{
+    height: 110px;
+    width: 100%;
+}
+.CreditCard_Middle{
+    padding-bottom: 10px;
+}
+.CreditCard_Middle p{
+    font-family: sans-serif, "Helvetica Neue", "Lucida Grande", Arial;
+    text-align: center;
+    color: #fff;
+    font-size: 25px;
+    margin: 0;
+    padding: 0;
+    opacity: 0.5;
+    letter-spacing: 1.5px;
+}
+.CreditCard_Bottom{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+}
+.CreditCard_Bottom_D1{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.CreditCard_Bottom_D2{
+    width: 50%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+.CreditCard_Bottom_D1 p{
+    color: #fff;
+    font-size: 22px;
+    opacity: 0.6;
+    margin: 0;
+    padding: 0;
+}
+.CreditCard_Bottom_D2 img{
+    height: 22px;
+}

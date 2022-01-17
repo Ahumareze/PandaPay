@@ -1,6 +1,7 @@
 import React from 'react';
 import GoldBall from '../../Components/Balls/GoldBall';
 import PurpleBall from '../../Components/Balls/PurpleBall';
+import CreditCard from '../../Components/CreditCard/CreditCard';
 import './LandingPage.css';
 
 const width = window.innerWidth;
@@ -12,16 +13,22 @@ function LandingPage() {
                 <p>FlarePanda</p>
             </div>
             <div className='LandingPageDetails'>
-                <p>Purchase bitcoin the wasy way</p>
+                <h1>Purchase bitcoin the easy way</h1>
+                <p>Buying bitcoin with just your credit or debit card</p>
             </div>
             <div className='LandingPageRowColumns'>
                 <div className='LandingPageRow1 FL'>
                     <PurpleBall />
                 </div>
-                <div className='LandingPageRow2'></div>
+                <div className='LandingPageRow2'>
+                    <CreditCard />
+                </div>
                 <div className='LandingPageRow1'>
                     <GoldBall />
                 </div>
+            </div>
+            <div className='LandingPageBottom'>
+                <div className='LandingPageBottom_Button'></div>
             </div>
         </div>
     );
