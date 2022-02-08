@@ -1,0 +1,147 @@
+.HomePage{
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background-color: #f9f9f9;
+}
+section{
+    height: 90vh;
+    width: 100vw;
+    display: grid;
+    grid-template-rows:min-content;
+    justify-content: center;
+}
+.BalancesContainer{
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.BalanceBox{
+    height: fit-content;
+    border-radius: 15px;
+    padding: 0 15px;
+    padding-bottom: 15px;
+    margin-right: 40px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.BalanceBoxBalance{
+    height: 100px;
+    width: 100%;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+.BalanceBoxBalance p{
+    font-size: 25px;
+    font-weight: bold;
+    margin: 0;
+}
+.BalanceBoxDetails{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.BalanceBoxDetails p{
+    font-weight: bold;
+    font-size: 15px;
+    margin: 0;
+}
+.CountryFlag {
+    height: 25px;
+    width: 25px;
+    border-radius: 20px;
+    background-color: #7A87FF;
+    margin-right: 10px;
+}
+.HistoryContainer{
+    width: fit-content;
+}
+.HeaderHistoryTopDiv{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+.HistoryHeader{
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+    margin: 0;
+    padding-top: 10px;
+}
+.HistoryContainer span{
+    color: #00DD55;
+}
+.NewTransactionButton{
+    height: 35px;
+    width: 170px;
+    background-color: #00DD55;
+    border-radius: 7px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    justify-self: flex-end;
+    cursor: pointer;
+}
+.NewTransactionButton p{
+    font-size: 15px;
+    font-weight: bold;
+    color: #fff;
+    margin: 0;
+}
+.TransactionContainer{
+    width: 650px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-bottom: 20px;
+}
+.TransactionContainerHeader{
+    height: 45px;
+    width: 100%;
+    border-bottom: 1px solid #dfdfdf;
+    display: grid;
+    grid-template-columns: 150px 150px 100px 100px 150px;
+    align-items: center;
+}
+.TransactionContainerHeader p{
+    margin: 0;
+    padding: 0;
+    padding-left: 15px;
+    font-size: 15px;
+    font-weight: bold;
+}
+.ep10{
+    padding-left: 100px;
+}
+.TransactionLists{
+    padding-top: 5px;
+}
+.TransactionBox{
+    height: 50px;
+    width: 630px;
+    margin-left: 10px;
+    border-radius: 10px;
+    border: 1px solid #dfdfdf;
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: 140px 150px 100px 100px 140px;
+    align-items: center;
+}
+.TransactionBox:hover{
+    background-color: #f9f9f9;
+}
+.TransactionBox p{
+    font-size: 15px;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+    padding-left: 15px;
+}

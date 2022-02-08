@@ -1,77 +1,162 @@
 .LandingPage{
     height: 100vh;
-    width: 100%;
+    width: 100vw;
+    background-color: rgb(250, 250, 250);
 }
-.LandingHeader{
-    padding-top: 20px;
-    padding-bottom: 10px;
-    width: 100%;
-    padding-left: 20px;
+
+/****** Header styles ******/
+
+.LandingPageHeader{
+    height: 10vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
 }
-.LandingHeader p{
-    font-weight: bold;
-    color: #FFD700;
+.LandingPageHeader p{
+    margin: 0;
+    padding: 0;
+}
+.LandingPageHeader .Logo{
     font-size: 25px;
-    margin: 0;
-    padding: 0;
+    font-weight: bold;
+    padding-left: 40px;
 }
-.LandingPageDetails {
-    width: 80%;
-    padding-left: 20px;
-    margin-top: 8vh;
+.LandingPageHeader .Logo span{
+    color: #00DD55;
 }
-.LandingPageDetails h1{
-    color: #fff;
-    font-weight: 600;
-    font-size: 40px;
-    margin: 0;
-    padding: 0;
-    text-transform: capitalize;
+.LandingPageHeaderContainer{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-content: flex-end;
 }
-.LandingPageDetails p{
-    color: #fff;
-    opacity: 0.8;
-    font-size: 20px;
-    margin: 0;
-    padding-top: 10px;
-}
-.LandingPageRowColumns{
+.LandingPageButtons{
     display: flex;
     flex-direction: row;
+    align-items: center;
+    padding-right: 50px;
+}
+.RegisterButton{
+    height: 40px;
+    width: 120px;
+    border-radius: 20px;
+    background-color: #00DD55;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    
+}
+.LoginButton p, .RegisterButton p{
+    font-weight: bold;
+    font-size: 16px;
+}
+.LoginButton p{
+    color: #000;
+    padding-right: 40px;
+}
+.RegisterButton p{
+    color: #fff;
+}
+
+/****** Body styles *****/
+
+.LandingPageBody{
+    height: 85vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.LandingPageDetails{
+    width: 100%;
     padding-top: 10vh;
 }
-.LandingPageRow1{
-    height: 200px;
-    width: 30%;
+.LandingPageDetails p{
+    font-size: 70px;
+    margin: 0;
+    padding: 0;
+    padding-left: 40px;
 }
-.LandingPageRow2{
-    height: 200px;
-    width: 40%;
+.LandingPageDetails p span{
+    font-weight: bold;
+    color: #00DD55;
+}
+.LandingPageFormContainer{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+/****** Form styles ******/
+
+.FormContainer{
+    width: 260px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px 20px;
+}
+.FormContainer p{
+    margin: 0;
+    padding: 0;
+}
+.FormTitle{
+    font-weight: bold;
+    font-size: 22px;
+    color: #000;
+}
+.Inputs{
+    padding-top: 10px;
+}
+.FormInput{
+    height: 70px;
+    width: 100%;
+    padding-top: 15px;
+}
+.FormInput p{
+    font-size: 15px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    opacity: 0.8;
+}
+.FormInput input{
+    height: 35px;
+    width: 240px;
+    padding-left: 15px;
+    border-radius: 7px;
+    border: 1px solid #7c7c7c;
+    font-size: 15px;
+}
+.FormInput input:focus{
+    outline: none;
+    border: 1px solid #00DD55;
+}
+.AuthButton{
+    height: 40px;
+    width: 100%;
+    background-color: #00DD55;
+    border-radius: 10px;
+    margin-top: 20px;
     display: grid;
     align-items: center;
     justify-content: center;
 }
-.LandingPageBottom{
-    height: 100px;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    display: flex;
-    align-items: center;
-    flex-direction: row-reverse;
+.AuthButton p{
+    color: #fff;
+    font-weight: bold;
+    font-size: 15px;
 }
-.LandingPageBottom_Button{
-    height: 50px;
-    width: 200px;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: flex-end;
-    padding-right: 20px;
+.ExtraLink{
+    padding-top: 20px;
+    text-align: center;
 }
-.LandingPageBottom_Button p{
-    color: #FFD700;
-    font-size: 26px;
-    margin: 0;
-    padding: 0;
+.ExtraLink p{
+    font-size: 13px;
+    font-weight: lighter;
+}
+.ExtraLink span{
+    color: #00DD55;
+    font-weight: bold;
 }

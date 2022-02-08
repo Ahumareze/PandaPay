@@ -1,0 +1,6 @@
+.TransactionPage{
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background-color: #f9f9f9;
+}
