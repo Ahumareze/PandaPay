@@ -1,12 +1,19 @@
 import React from 'react';
 import './App.css';
 
-import { LandingPage } from './Screens/index';
+
+import {Route, Switch} from 'react-router-dom';
+
+import { LandingPage, HomePage, TransactionPage } from './Screens/index';
 
 function App() {
   return (
     <div className="App">
-      <LandingPage />
+      <Switch>
+        <Route path='/home' component={HomePage} />
+        <Route path='/transaction' component={TransactionPage} />
+        <Route path='/' component={LandingPage} exact />
+      </Switch>
     </div>
   );
 }
