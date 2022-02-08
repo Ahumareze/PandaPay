@@ -3,10 +3,14 @@ import { Header } from '../../Components';
 
 import './TransactionPage.css';
 
-function TransactionPage() {
+function TransactionPage(props: any) {
+    const navigate = (e:string) => {
+        props.history.push(e)
+    }
+
     return (
         <div className='TransactionPage'>
-            <Header />
+            <Header home={false} navigate={(e) => navigate(e)} />
         </div>
     );
 }
