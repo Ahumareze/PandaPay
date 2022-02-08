@@ -1,15 +1,25 @@
-import React from 'react';
+import React, {FC} from 'react';
 
-function Header() {
+interface HeaderProps {
+    setLogin: (e: boolean) => void;
+    isLogin: boolean
+}
+
+const Header: FC<HeaderProps> = ({setLogin, isLogin}): JSX.Element => {
+
+    const onPress = (e: boolean) => {
+        setLogin(e);
+    }
+
     return (
         <div className='LandingPageHeader'>
             <p className='Logo'>Panda<span>Pay</span></p>
             <div className='LandingPageHeaderContainer'>
                 <div className='LandingPageButtons'>
-                    <div className='LoginButton'>
+                    <div className={isLogin ? 'activeButton' : 'inactiveButton' } onClick={() => onPress(true)} >
                         <p>Login</p>
                     </div>
-                    <div className='RegisterButton'>
+                    <div className={!isLogin ? 'activeButton' : 'inactiveButton' } onClick={() => onPress(false)} >
                         <p>Register</p>
                     </div>
                 </div>

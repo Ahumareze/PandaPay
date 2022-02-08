@@ -35,9 +35,8 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding-right: 50px;
 }
-.RegisterButton{
+.activeButton{
     height: 40px;
     width: 120px;
     border-radius: 20px;
@@ -45,17 +44,19 @@
     display: grid;
     align-items: center;
     justify-content: center;
-    
+    margin-right: 40px;
+    cursor: pointer;
 }
-.LoginButton p, .RegisterButton p{
+.inactiveButton p, .activeButton p{
     font-weight: bold;
     font-size: 16px;
 }
-.LoginButton p{
+.inactiveButton p{
     color: #000;
     padding-right: 40px;
+    cursor: pointer;
 }
-.RegisterButton p{
+.activeButton p{
     color: #fff;
 }
 
@@ -142,6 +143,7 @@
     display: grid;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 .AuthButton p{
     color: #fff;
@@ -159,4 +161,5 @@
 .ExtraLink span{
     color: #00DD55;
     font-weight: bold;
+    cursor: pointer;
 }

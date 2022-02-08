@@ -1,9 +1,13 @@
-import React from 'react';
+import React, {FC} from 'react';
 
-function FormInput() {
+interface inputProps {
+    title: string
+}
+
+const FormInput: FC<inputProps> = ({title}): JSX.Element => {
     return (
         <div className='FormInput'>
-            <p>Email</p>
+            <p>{title}</p>
             <input />
         </div>
     );
