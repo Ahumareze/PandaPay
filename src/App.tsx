@@ -1,9 +1,10 @@
 import React from 'react';
 import './App.css';
 
-
+//Imported packages
 import {Route, Switch} from 'react-router-dom';
 
+//Imported components
 import { LandingPage, HomePage, TransactionPage } from './Screens/index';
 
 function App() {
