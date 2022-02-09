@@ -1,5 +1,5 @@
-const LOGIN = 'LOGIN';
+const SETTOKEN = 'SETTOKEN';
 
 export {
-    LOGIN
+    SETTOKEN
 }
