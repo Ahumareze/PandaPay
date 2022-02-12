@@ -4,3 +4,190 @@
     overflow: hidden;
     background-color: #f9f9f9;
 }
+.section{
+    height: 90vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.ListSection{
+    height: 90vh;
+    width: fit-content;
+    padding-right: 15px;
+}
+.UsersListsContainer{
+    height: 410px;
+    width: 280px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    margin-top: 30px;
+    padding: 20px 15px;
+}
+.UserListContainerTitle{
+    color: #000;
+    font-size: 17px;
+    font-weight: bold;
+    margin: 0;
+}
+.UserListContainerTitle span{
+    color: #00DD55;
+}
+.ListsContainer{
+    padding-top: 20px;
+    width: 100%;
+}
+.ListItem{
+    height: 60px;
+    width: 100%;
+    border: 1px solid #dfdfdf;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center ;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+.ListItem:hover{
+    background-color: #f9f9f9;
+}
+.UserProfilePic{
+    height: 40px;
+    width: 40px;
+    background-color: #00DD55;
+    border-radius: 20px;
+    margin: 0 10px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+.UserProfilePic p{
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.ListItemUsername{
+    font-size: 16px;
+    color: #000;
+    margin: 0;
+    font-weight: bold;
+    padding-bottom: 1px;
+}
+.ListItemEmail{
+    font-size: 16px;
+    color: #000;
+    margin: 0;
+    opacity: 0.5;
+}
+.TransferSection{
+    height: 90vh;
+    width: fit-content;
+    padding-left: 15px;
+}
+.TransferContainer{
+    width: 280px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    margin-top: 30px;
+    padding: 20px 15px;
+}
+.MainTransferContainer{
+    padding-top: 20px;
+}
+.TransactionInputItem{
+    height: 70px;
+    width: 100%;
+}
+.TransactionInputTitle{
+    font-weight: bold;
+    font-size: 17px;
+    color: #000;
+    margin: 0;
+}
+.TransactionInputTitle span{
+    color: #00DD55;
+}
+.TransactionInputContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 10px;
+}
+.TransactionInputContainer input{
+    height: 35px;
+    width: 110px;
+    border: 1px solid #dfdfdf;
+    outline: none;
+    border-radius: 7px;
+    background-color: #f9f9f9;
+    font-size: 17px;
+    padding-left: 10px;
+}
+.TIP_Div{
+    height: 35px;
+    width: 110px;
+    border: 1px solid #dfdfdf;
+    outline: none;
+    border-radius: 7px;
+    background-color: #f9f9f9;
+    font-size: 17px;
+    padding-left: 10px;
+    display: grid;
+    align-items: center;
+}
+.TIP_Div p{
+    margin: 0;
+    font-size: 17px;
+}
+.TransactionCurrency{
+    height: 37px;
+    background-color: #f9f9f9;
+    border-radius: 7px;
+    border: 1px solid #dfdfdf;
+    margin-left: 10px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.TransactionCurrency:focus{
+    outline: none;
+    border: 1px solid #00DD55;
+}
+.TransactionCurrency p{
+    margin: 0;
+    font-size: 14px;
+    font-weight: bold;
+    opacity: 0.7;
+}
+.TransferRate{
+    font-size: 15px;
+}
+.confirmTransactionButton{
+    height: 42px;
+    width: 220px;
+    background-color: #00DD55;
+    border-radius: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 25px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.confirmTransactionButton p{
+    font-size: 15px;
+    font-weight: bold;
+    color: #fff;
+    margin: 0;
+}
+.TransferError{
+    font-size: 15px;
+    color: red;
+}

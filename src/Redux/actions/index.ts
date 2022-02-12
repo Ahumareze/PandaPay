@@ -1,3 +1,12 @@
-import { init } from "./auth";
+import { init, AuthSignup, AuthLogin } from "./auth";
+import { logout, fetchData, getUsersList, Transfer } from "./main";
 
-export {init}
+export {
+    init, 
+    AuthSignup, 
+    AuthLogin, 
+    logout,
+    fetchData,
+    getUsersList,
+    Transfer
+};

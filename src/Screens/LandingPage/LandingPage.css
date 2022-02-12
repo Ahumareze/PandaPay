@@ -111,6 +111,12 @@
 .Inputs{
     padding-top: 10px;
 }
+.FormErrorMessage{
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    color: red;
+}
 .FormInput{
     height: 70px;
     width: 100%;

@@ -1,14 +1,23 @@
-import React from 'react';
+import React, {FC} from 'react';
 
-function BalanceBox() {
+interface BalanceBoxProps{
+    value: any,
+    currency: string,
+    sign: string,
+    flag: any
+}
+
+const BalanceBox:FC<BalanceBoxProps> = ({value, currency, sign, flag}):JSX.Element =>  {
     return (
         <div className='BalanceBox'>
             <div className='BalanceBoxBalance'>
-                <p>$200</p>
+                <p>{sign}{value}</p>
             </div>
             <div className="BalanceBoxDetails">
-                <div className="CountryFlag"></div>
-                <p>USD balance</p>
+                <div className="CountryFlag">
+                    <img src={flag} />
+                </div>
+                <p>{currency} balance</p>
             </div>
         </div>
     );

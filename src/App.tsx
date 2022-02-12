@@ -4,25 +4,36 @@ import './App.css';
 import { connect } from 'react-redux';
 
 //Imported packages
-import {Route, Switch} from 'react-router-dom';
+import {Redirect, Route, Switch} from 'react-router-dom';
 
 //Imported components
 import { LandingPage, HomePage, TransactionPage } from './Screens/index';
-import * as actions from './Redux/actions/index';
+import * as actions from './Redux/actions';
 
 function App(props:any) {
 
   useEffect(() => {
     props.init();
   }, []);
+
+  const auth = (
+    <Switch>
+      <Route path='/' component={LandingPage} exact />
+      <Redirect to='/' />
+    </Switch>
+  )
+
+  const main = (
+    <Switch>
+        <Route path='/home' component={HomePage} />
+        <Route path='/transaction' component={TransactionPage} />
+        <Redirect to='/home' />
+    </Switch>
+  )
   
   return (
     <div className="App">
-      <Switch>
-        <Route path='/home' component={HomePage} />
-        <Route path='/transaction' component={TransactionPage} />
-        <Route path='/' component={LandingPage} exact />
-      </Switch>
+      {props.token ? main : auth }
     </div>
   );
 }

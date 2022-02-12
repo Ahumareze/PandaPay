@@ -4,10 +4,13 @@ import FormInput from './FormInput';
 
 interface FormProps {
     isLogin: boolean,
-    setLogin: (e:boolean) => void
+    errorMessage: any,
+    setLogin: (e:boolean) => void,
+    authLogin: (e: object) => void,
+    authSignup: (e: object) => void
 }
 
-const Form: FC<FormProps> = ({isLogin, setLogin}): JSX.Element => {
+const Form: FC<FormProps> = ({isLogin, setLogin, authLogin, authSignup, errorMessage}): JSX.Element => {
     const [username, setUsername] = useState<any>();
     const [email, setEmail] = useState<any>();
     const [phone, setPhone] = useState<any>();
@@ -22,7 +25,7 @@ const Form: FC<FormProps> = ({isLogin, setLogin}): JSX.Element => {
             email: email,
             password: password,
         };
-        console.log(data)
+        authLogin(data)
     };
 
     const submitRegister = () => {
@@ -32,13 +35,14 @@ const Form: FC<FormProps> = ({isLogin, setLogin}): JSX.Element => {
             phone: phone,
             password: password
         };
-        console.log(data)
+        authSignup(data)
     }
 
     const loginForm = (
         <>
             <p className='FormTitle'>Login</p>
             <div className='Inputs'>
+                <p className='FormErrorMessage'>{errorMessage}</p>
                 <FormInput title='Email' setValue={(e) => setEmail(e)} />
                 <FormInput title='Password' setValue={(e) => setPassword(e)} />
             </div>
@@ -55,6 +59,7 @@ const Form: FC<FormProps> = ({isLogin, setLogin}): JSX.Element => {
         <>
             <p className='FormTitle'>Register</p>
             <div className='Inputs'>
+                <p className='FormErrorMessage'>{errorMessage}</p>
                 <FormInput title='Username'  setValue={(e) => setUsername(e)} />
                 <FormInput title='Email' setValue={(e) => setEmail(e)} />
                 <FormInput title='Phone number' setValue={(e) => setPhone(e)} />

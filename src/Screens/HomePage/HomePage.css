@@ -56,6 +56,10 @@ section{
     border-radius: 20px;
     background-color: #7A87FF;
     margin-right: 10px;
+    overflow: hidden;
+}
+.CountryFlag img{
+    height: 100%;
 }
 .HistoryContainer{
     width: fit-content;

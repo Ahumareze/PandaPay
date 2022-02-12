@@ -1,38 +1,74 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './HomePage.css';
 
+//Imported packeges
+import { connect } from 'react-redux';
+
 //Components
-import { Header } from '../../Components';
+import { Header, Loader } from '../../Components';
 import BalanceBox from './components/BalanceBox';
 import TransactionContainer from './components/TransactionContainer';
 
+import * as actions from '../../Redux/actions';
+
+import USD from '../../Assets/flags/USD.png';
+import EUR from '../../Assets/flags/EUR.jpg';
+import NGN from '../../Assets/flags/NGN.jpg';
+
 function HomePage(props: any) {
+
+    useEffect(() => {
+        props.fetchData();
+    }, [])
 
     const navigate = (e:string) => {
         props.history.push(e)
     }
 
+    let view = (
+        <section>
+            <div className='BalancesContainer'>
+                <BalanceBox value={props.userData &&  props.userData.usdBalance} currency='USD' sign='$' flag={USD} />
+                <BalanceBox value={props.userData && props.userData.eurBalance} currency='EUR' sign='€' flag={EUR} />
+                <BalanceBox value={props.userData && props.userData.ngnBalance} currency='NGN' sign='₦' flag={NGN} />
+            </div>
+            <div className='HistoryContainer'>
+                <div className='HeaderHistoryTopDiv'>
+                    <p className='HistoryHeader'>Transaction <span>History</span> </p>
+                    <div className='NewTransactionButton' onClick={() => navigate('/transaction')} >
+                        <p>New Transaction</p>
+                    </div>
+                </div>
+                <TransactionContainer Transactions={props.userData && props.userData.transactions} />
+            </div>
+        </section>
+    )
+    if(!props.userData){
+        view = (
+            <p>Error fetching data</p>
+        )
+    }
+
     return (
         <div className='HomePage'>
-            <Header home navigate={(e) => navigate(e)} />
-            <section>
-                <div className='BalancesContainer'>
-                    <BalanceBox />
-                    <BalanceBox />
-                    <BalanceBox />
-                </div>
-                <div className='HistoryContainer'>
-                    <div className='HeaderHistoryTopDiv'>
-                        <p className='HistoryHeader'>Transaction <span>History</span> </p>
-                        <div className='NewTransactionButton' onClick={() => navigate('/transaction')} >
-                            <p>New Transaction</p>
-                        </div>
-                    </div>
-                    <TransactionContainer />
-                </div>
-            </section>
+            <Header home navigate={(e) => navigate(e)} logout={() => props.logout()} />
+            {props.loading ? <Loader /> : view }
         </div>
     );
 }
 
-export default HomePage;
+const mapStateToProps = (state: any) => {
+    return{
+        userData: state.userData,
+        loading: state.loading
+    }
+}
+
+const mapDispatchToProps = (dispatch: any) => {
+    return{
+        logout: () => dispatch(actions.logout()),
+        fetchData: () => dispatch(actions.fetchData())
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
