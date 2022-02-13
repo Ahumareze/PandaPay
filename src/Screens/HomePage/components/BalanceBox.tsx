@@ -11,7 +11,7 @@ const BalanceBox:FC<BalanceBoxProps> = ({value, currency, sign, flag}):JSX.Eleme
     return (
         <div className='BalanceBox'>
             <div className='BalanceBoxBalance'>
-                <p>{sign}{value}</p>
+                <p>{sign}{value.toFixed(2)}</p>
             </div>
             <div className="BalanceBoxDetails">
                 <div className="CountryFlag">

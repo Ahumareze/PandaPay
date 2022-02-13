@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import './TransactionPage.css';
 
 //Imported Components
-import { Header, Loader } from '../../Components';
+import { Error, Header, Loader } from '../../Components';
 import ListItem from './components/ListItem';
 import TransactionInput from './components/TransactionInput';
 
@@ -72,7 +72,9 @@ function TransactionPage(props: any) {
             amountSending: amountSending,
             amountRecieving: amountRecieving,
             SendingCurrencyName: SendingCurrencyName,
-            RecievingCurrencyName: RecievingCurrencyName
+            RecievingCurrencyName: RecievingCurrencyName,
+            SendingCurrencyAbb: sendingRateName,
+            RecieverCurrencyAbb: recievingRateName
         }
         // let SDB = 0;
         // Object.keys(userData).map(i => {
@@ -145,10 +147,13 @@ function TransactionPage(props: any) {
             </div>
         </div>
     )
+    if(!props.usersList){
+        view = <Error transactionError />
+    }
 
     return (
         <div className='TransactionPage'>
-            <Header home={false} navigate={(e) => navigate(e)} logout={() => props.logout()} />
+            <Header home={false} navigate={(e) => navigate(e)} logout={() => props.logout()} userName={props.userData ? props.userData.username : '' } />
             {props.loading ? <Loader /> :  view}
         </div>
     );

@@ -24,6 +24,7 @@ export const AuthSignup = (e: any) => {
         axios.post(signupUrl, newData)
             .then(r => {
                 dispatch(createUserData(e.username, e.email, e.phone, r.data.idToken));
+                dispatch(setErrorMessage(null))
             })
             .catch(err => {
                 dispatch(setLoading(false))
@@ -48,6 +49,7 @@ export const AuthLogin = (e: any) => {
             .then(r => {
                 dispatch(setLoading(false));
                 dispatch(setToken(r.data.idToken));
+                dispatch(setErrorMessage(null))
                 localStorage.setItem('@pandapayToken', r.data.idToken);
                 localStorage.setItem('@pandapayEmail', r.data.email)
             })
@@ -76,6 +78,7 @@ export const createUserData = (username: any, email: any, phone: any, idToken: a
             .then(r => {
                 dispatch(setLoading(false));
                 dispatch(setToken(idToken));
+                dispatch(setErrorMessage(null));
                 localStorage.setItem('@pandapayToken',idToken);
                 localStorage.setItem('@pandapayEmail', email)
             })
@@ -99,7 +102,7 @@ const setLoading = (e: boolean) => {
     }
 }
 
-const setErrorMessage = (e: string) => {
+const setErrorMessage = (e: any) => {
     return{
         type: actionTypes.ERRORMESSAGE,
         value: e

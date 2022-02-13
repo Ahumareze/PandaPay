@@ -46,3 +46,73 @@
 .LogoutButton{
     color: red;
 }
+.Modal{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0,0,0,0.6);
+    position: absolute;
+    top: 0;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+.ModalContainer{
+    width: 310px;
+    background-color: #fff;
+    border-radius: 15px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+.ModalTitle{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+.ModalDetails{
+    font-size: 17px;
+    text-align: center;
+    opacity: 0.7;
+}
+.ModalBottom{
+    width: fit-content;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    flex-direction: row;
+}
+.ModalCancleButton{
+    height: 40px;
+    width: 110px;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.ModalCancleButton p{
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    font-weight: bold;
+    color: #000;
+}
+.ModallogoutButton p{
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    font-weight: bold;
+    color: #fff
+}
+.ModallogoutButton{
+    height: 40px;
+    width: 110px;
+    border-radius: 10px;
+    background-color: #ff0000;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    margin-left: 25px;
+    cursor: pointer;
+}

@@ -9,11 +9,18 @@ const TransactionContainer:FC<HistoryProps> = ({Transactions}):JSX.Element => {
 
     let view = (
         <>
-            
             <div className='TransactionLists'>
-                <TransactionBox />
-                <TransactionBox />
-                <TransactionBox />
+                {Transactions && Object.keys(Transactions).map((i:any) => {
+                    return <TransactionBox
+                        sender={Transactions[i].sender}
+                        reciever={Transactions[i].reciever}
+                        value={Transactions[i].value}
+                        currency={Transactions[i].currency}
+                        date={Transactions[i].date}
+                        debit={Transactions[i].debit}
+                        key={i}
+                    />
+                }) }
             </div>
         </>
     )

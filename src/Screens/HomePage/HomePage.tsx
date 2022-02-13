@@ -51,7 +51,7 @@ function HomePage(props: any) {
 
     return (
         <div className='HomePage'>
-            <Header home navigate={(e) => navigate(e)} logout={() => props.logout()} />
+            <Header home navigate={(e) => navigate(e)} logout={() => props.logout()} userName={props.userData ? props.userData.username : '' } />
             {props.loading ? <Loader /> : view }
         </div>
     );
