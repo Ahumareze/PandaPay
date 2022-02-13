@@ -6,8 +6,10 @@ import './TransactionPage.css';
 import { Error, Header, Loader } from '../../Components';
 import ListItem from './components/ListItem';
 import TransactionInput from './components/TransactionInput';
+import Sent from './components/Sent';
 
 import * as actions from '../../Redux/actions';
+
 
 function TransactionPage(props: any) {
     const [selectedUser, setSelectedUser] = useState<any>();
@@ -76,19 +78,7 @@ function TransactionPage(props: any) {
             SendingCurrencyAbb: sendingRateName,
             RecieverCurrencyAbb: recievingRateName
         }
-        // let SDB = 0;
-        // Object.keys(userData).map(i => {
-        //     if(i === SendingCurrencyName){
-        //         SDB = userData[i]
-        //     }
-        // });
-        // if(SendingCurrencyName === 'usdBalance'){
-        //     console.log({...userData, usdBalance: SDB - amountSending })
-        // }else if(SendingCurrencyName === 'eurBalance'){
-        //     console.log({...userData, eurBalance: SDB - amountSending})
-        // }else{
-        //     console.log({...userData, ngnBalance: SDB - amounng}tSendi)
-        // }
+        
         props.Transfer(userData, recieverData, data)
     }
 
@@ -124,7 +114,7 @@ function TransactionPage(props: any) {
         )
     }else{
         TransferContainer = (
-            <p>No user selected</p>
+            <p style={{opacity: 0.6, textAlign: 'center'}}>No user selected</p>
         )
     }
 
@@ -148,7 +138,12 @@ function TransactionPage(props: any) {
         </div>
     )
     if(!props.usersList){
-        view = <Error transactionError />
+        view = <Error />
+    }else if(props.sent){
+        view = <Sent onClick={() => {
+            props.setSent(false);
+            navigate('/home')
+        }} />
     }
 
     return (
@@ -164,7 +159,8 @@ const mapStateToProps = (state: any) => {
         usersList: state.usersList,
         loading: state.loading,
         userData: state.userData,
-        TransactionError: state.TransactionError
+        TransactionError: state.TransactionError,
+        sent: state.sent
     }
 }
 
@@ -172,6 +168,7 @@ const mapDispatchToProps = (dispatch: any) => {
     return{
         logout: () => dispatch(actions.logout()),
         getList: () => dispatch(actions.getUsersList()),
+        setSent: () => dispatch(actions.setSent(false)),
         Transfer: (userData: any, recieverData: any, data: any) => dispatch(actions.Transfer(userData, recieverData, data))
     }
 }

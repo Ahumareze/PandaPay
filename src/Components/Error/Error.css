@@ -1,5 +1,12 @@
 .ErrorScreen{
-    height: 50vh;
     width: 100vw;
-    border: 1px solid #000;
+    text-align: center;
+    margin-top: 10vh;
+}
+.MainErrorMessage{
+    font-size: 20px;
+    font-weight: bold;
+}
+.ExtraErrorMessage{
+    opacity: 0.5;
 }

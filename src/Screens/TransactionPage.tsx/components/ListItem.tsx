@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {FC, useEffect, useState} from 'react';
 
 interface ListitemProps {
     username: any,
@@ -7,6 +7,18 @@ interface ListitemProps {
 }
 
 const ListItem:FC<ListitemProps> = ({username, email, onClick}):JSX.Element => {
+    const [mail, setMail] = useState<any>();
+
+    useEffect(() => {
+        if(email.length > 15){
+            var string = email;
+            var length = 22;
+            var trimmedString = string.substring(0, length);
+            setMail(trimmedString + '...')
+        }else{
+            setMail(email)
+        }
+    }, [])
     return (
         <div className='ListItem' onClick={() => onClick()}>
             <div className='UserProfilePic'>
@@ -14,7 +26,7 @@ const ListItem:FC<ListitemProps> = ({username, email, onClick}):JSX.Element => {
             </div>
             <div>
                 <p className='ListItemUsername'>{username}</p>
-                <p className='ListItemEmail'>{email}</p>
+                <p className='ListItemEmail'>{mail}</p>
             </div>
         </div>
     );

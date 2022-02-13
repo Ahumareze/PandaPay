@@ -155,12 +155,20 @@ const PostRecieverData = (data: any, creditAlert: any) => {
             .then(r => {
                 console.log(r.data)
                 dispatch(setLoading(false));
-                dispatch(setTransferError(null))
+                dispatch(setTransferError(null));
+                dispatch(setSent(true))
             })
             .catch(e => {
                 console.log(e.response)
                 dispatch(setLoading(false))
             })
+    }
+};
+
+export const setSent = (e: any) => {
+    return{
+        type: actionTypes.SENT,
+        value: e
     }
 }
 

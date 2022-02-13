@@ -43,8 +43,8 @@ const Form: FC<FormProps> = ({isLogin, setLogin, authLogin, authSignup, errorMes
             <p className='FormTitle'>Login</p>
             <div className='Inputs'>
                 <p className='FormErrorMessage'>{errorMessage}</p>
-                <FormInput title='Email' setValue={(e) => setEmail(e)} />
-                <FormInput title='Password' setValue={(e) => setPassword(e)} />
+                <FormInput title='Email' setValue={(e) => setEmail(e)} secure={false} />
+                <FormInput title='Password' setValue={(e) => setPassword(e)} secure />
             </div>
             <div className='AuthButton' onClick={() => submitLogin() } >
                 <p>Sign In</p>
@@ -60,10 +60,10 @@ const Form: FC<FormProps> = ({isLogin, setLogin, authLogin, authSignup, errorMes
             <p className='FormTitle'>Register</p>
             <div className='Inputs'>
                 <p className='FormErrorMessage'>{errorMessage}</p>
-                <FormInput title='Username'  setValue={(e) => setUsername(e)} />
-                <FormInput title='Email' setValue={(e) => setEmail(e)} />
-                <FormInput title='Phone number' setValue={(e) => setPhone(e)} />
-                <FormInput title='Password' setValue={(e) => setPassword(e)} />
+                <FormInput title='Username'  setValue={(e) => setUsername(e)} secure={false} />
+                <FormInput title='Email' setValue={(e) => setEmail(e)} secure={false} />
+                <FormInput title='Phone number' setValue={(e) => setPhone(e)} secure={false} />
+                <FormInput title='Password' setValue={(e) => setPassword(e)} secure />
             </div>
             <div className='AuthButton' onClick={() => submitRegister()} >
                 <p>Create account</p>

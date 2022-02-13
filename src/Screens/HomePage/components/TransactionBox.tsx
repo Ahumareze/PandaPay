@@ -1,6 +1,7 @@
 import React, {FC} from 'react';
 
 interface TransactionBoxProps {
+    username: string,
     sender: string,
     reciever: string,
     value: any,
@@ -9,7 +10,7 @@ interface TransactionBoxProps {
     debit: boolean
 }
 
-const TransactionBox:FC<TransactionBoxProps> = ({sender, reciever, value, currency, date, debit}):JSX.Element => {
+const TransactionBox:FC<TransactionBoxProps> = ({username, sender, reciever, value, currency, date, debit}):JSX.Element => {
     const val = JSON.parse(value);
     let extraDetail = <p style={{color: '#00DD55', fontWeight: 'bold'}}>+{val.toFixed(2)}</p>
     if(debit){
@@ -18,8 +19,8 @@ const TransactionBox:FC<TransactionBoxProps> = ({sender, reciever, value, curren
 
     return (
         <div className='TransactionBox'>
-            <p>{sender}</p>
-            <p>{reciever}</p>
+            <p>{username === sender ? 'You' : sender}</p>
+            <p>{username === reciever ? 'You' : reciever}</p>
             {extraDetail}
             <p>{currency}</p>
             <p>{date}</p>

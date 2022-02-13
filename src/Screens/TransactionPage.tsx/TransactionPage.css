@@ -191,3 +191,36 @@
     font-size: 15px;
     color: red;
 }
+.Sent{
+    width: 300px;
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px 0px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10vh;
+}
+.SentDetails{
+    font-size: 20px;
+}
+.BackToHomeButton{
+    height: 40px;
+    width: 200px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.BackToHomeButton p{
+    margin: 0;
+    color: #000;
+    font-size: 15px;
+    font-weight: bold;
+}

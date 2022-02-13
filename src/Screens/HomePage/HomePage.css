@@ -10,6 +10,8 @@ section{
     display: grid;
     grid-template-rows:min-content;
     justify-content: center;
+    overflow: hidden;
+    overflow-y: scroll;
 }
 .BalancesContainer{
     width: fit-content;
@@ -63,6 +65,7 @@ section{
 }
 .HistoryContainer{
     width: fit-content;
+    margin-bottom: 30px;
 }
 .HeaderHistoryTopDiv{
     display: grid;

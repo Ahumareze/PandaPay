@@ -5,7 +5,7 @@ import './HomePage.css';
 import { connect } from 'react-redux';
 
 //Components
-import { Header, Loader } from '../../Components';
+import { Error, Header, Loader } from '../../Components';
 import BalanceBox from './components/BalanceBox';
 import TransactionContainer from './components/TransactionContainer';
 
@@ -39,13 +39,13 @@ function HomePage(props: any) {
                         <p>New Transaction</p>
                     </div>
                 </div>
-                <TransactionContainer Transactions={props.userData && props.userData.transactions} />
+                <TransactionContainer Transactions={props.userData && props.userData.transactions} username={props.userData && props.userData.username } />
             </div>
         </section>
     )
     if(!props.userData){
         view = (
-            <p>Error fetching data</p>
+            <Error />
         )
     }
 

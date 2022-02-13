@@ -2,16 +2,18 @@ import React, {FC} from 'react';
 import TransactionBox from './TransactionBox';
 
 interface HistoryProps {
-    Transactions: any
+    Transactions: any,
+    username: any
 }
 
-const TransactionContainer:FC<HistoryProps> = ({Transactions}):JSX.Element => {
+const TransactionContainer:FC<HistoryProps> = ({Transactions, username}):JSX.Element => {
 
     let view = (
         <>
             <div className='TransactionLists'>
                 {Transactions && Object.keys(Transactions).map((i:any) => {
                     return <TransactionBox
+                        username={username}
                         sender={Transactions[i].sender}
                         reciever={Transactions[i].reciever}
                         value={Transactions[i].value}
@@ -25,7 +27,7 @@ const TransactionContainer:FC<HistoryProps> = ({Transactions}):JSX.Element => {
         </>
     )
     if(!Transactions){
-        view = <p style={{textAlign: 'center'}} >you have not made any transactions yet</p>
+        view = <p style={{textAlign: 'center', opacity: 0.5}} >you have not made any transactions yet</p>
     }
 
     return (

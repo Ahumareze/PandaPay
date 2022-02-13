@@ -7,6 +7,7 @@ const initialState = {
     userData: null,
     usersList: null,
     TransactionError: null,
+    sent: false
 }
 
 const reducer = (state = initialState, action: any) => {
@@ -22,7 +23,9 @@ const reducer = (state = initialState, action: any) => {
         case actionTypes.SETUSERSLIST:
             return{...state, usersList: action.value};
         case actionTypes.TRANSACTIONERROR:
-            return{...state, TransactionError: action.value}
+            return{...state, TransactionError: action.value};
+        case actionTypes.SENT:
+            return{...state, sent: action.value}
     }
     return state
 };
