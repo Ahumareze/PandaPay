@@ -200,7 +200,7 @@ const setUsersList = (list: any) => {
     }
 }
 
-const setTransferError = (e: any) => {
+export const setTransferError = (e: any) => {
     return{
         type: actionTypes.TRANSACTIONERROR,
         value: e

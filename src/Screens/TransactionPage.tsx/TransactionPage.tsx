@@ -33,6 +33,7 @@ function TransactionPage(props: any) {
 
     useEffect(() => {
         converter();
+        props.setTransactionRrror();
     }, [amountSending, sendingCurrency, recievingCurrency]);
 
     const converter = () => {
@@ -169,6 +170,7 @@ const mapDispatchToProps = (dispatch: any) => {
         logout: () => dispatch(actions.logout()),
         getList: () => dispatch(actions.getUsersList()),
         setSent: () => dispatch(actions.setSent(false)),
+        setTransactionRrror: () => dispatch(actions.setTransferError(null)),
         Transfer: (userData: any, recieverData: any, data: any) => dispatch(actions.Transfer(userData, recieverData, data))
     }
 }

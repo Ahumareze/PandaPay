@@ -1,5 +1,5 @@
 import { init, AuthSignup, AuthLogin } from "./auth";
-import { logout, fetchData, getUsersList, Transfer, setSent } from "./main";
+import { logout, fetchData, getUsersList, Transfer, setSent, setTransferError } from "./main";
 
 export {
     init, 
@@ -9,5 +9,6 @@ export {
     fetchData,
     getUsersList,
     Transfer,
-    setSent
+    setSent,
+    setTransferError
 };
